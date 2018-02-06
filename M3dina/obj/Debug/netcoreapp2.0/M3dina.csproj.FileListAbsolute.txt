@@ -1,0 +1,11 @@
+/Users/medina/Projects/M3dina/M3dina/bin/Debug/netcoreapp2.0/M3dina.deps.json
+/Users/medina/Projects/M3dina/M3dina/bin/Debug/netcoreapp2.0/M3dina.runtimeconfig.json
+/Users/medina/Projects/M3dina/M3dina/bin/Debug/netcoreapp2.0/M3dina.runtimeconfig.dev.json
+/Users/medina/Projects/M3dina/M3dina/bin/Debug/netcoreapp2.0/M3dina.dll
+/Users/medina/Projects/M3dina/M3dina/bin/Debug/netcoreapp2.0/M3dina.pdb
+/Users/medina/Projects/M3dina/M3dina/obj/Debug/netcoreapp2.0/M3dina.csprojResolveAssemblyReference.cache
+/Users/medina/Projects/M3dina/M3dina/obj/Debug/netcoreapp2.0/M3dina.csproj.CoreCompileInputs.cache
+/Users/medina/Projects/M3dina/M3dina/obj/Debug/netcoreapp2.0/M3dina.AssemblyInfoInputs.cache
+/Users/medina/Projects/M3dina/M3dina/obj/Debug/netcoreapp2.0/M3dina.AssemblyInfo.cs
+/Users/medina/Projects/M3dina/M3dina/obj/Debug/netcoreapp2.0/M3dina.dll
+/Users/medina/Projects/M3dina/M3dina/obj/Debug/netcoreapp2.0/M3dina.pdb

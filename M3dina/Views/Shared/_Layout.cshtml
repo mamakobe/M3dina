@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>@ViewData["Title"] - M3dina</title>
+<meta name="description" content="Medina, Hospital Admin">
+<meta name="keywords" content="adminX, Bootstrap4, Hospital, Angular4, Material Design">
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<link href="~/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
+<link href="~/assets/plugins/morrisjs/morris.css" rel="stylesheet" />
+<!-- Custom Css -->
+<link href="~/assets/css/main.css" rel="stylesheet">
+<!--Admin build with sass and angular4 CLI kit -->
+<link href="~/assets/css/themes/all-themes.css" rel="stylesheet" />
+</head>
+<body class="theme-cyan">
+<!-- Page Loader -->
+<div class="page-loader-wrapper">
+    <div class="loader">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <p>Please wait...</p>
+    </div>
+</div>
+<!-- Overlay For Sidebars -->
+<div class="overlay"></div>
+
+<!-- Search  -->
+<div class="search-bar">
+    <div class="search-icon"> <i class="material-icons">search</i> </div>
+    <input type="text" placeholder="Search m3dina...">
+    <div class="close-search"> <i class="material-icons">close</i> </div>
+</div>
+<!-- Top Bar -->
+<nav class="navbar clearHeader">
+  @Html.Partial("_TopNavigation")
+</nav>
+<!-- #Top Bar --> 
+<!--Side menu and right menu -->
+ <section> 
+<!-- Left Sidebar -->
+<aside id="leftsidebar" class="sidebar"> 
+     @Html.Partial("_LeftNavigation")
+</aside>
+<!-- #END# Left Sidebar --> 
+<!-- Right Sidebar -->
+<aside id="rightsidebar" class="right-sidebar">
+  @Html.Partial("_RightNavigation")
+</aside>
+<!-- #END# Right Sidebar --> 
+</section>
+<!-- main content -->
+<section >
+    <div class="container-fluid">
+        <div class="block-header">
+            <h2>Dashboard</h2>
+            <ol class="breadcrumb">
+             <breadcrumb asp-homepage-title="Home" asp-homepage-url="@Url.Action("Index", "Home", values: new { area = "" })"
+             asp-homepage-glyphicon="glyphicon glyphicon-home">
+             </breadcrumb>
+            </ol>
+        </div>
+
+         @RenderBody()
+  </div>
+</section>
+
+<!-- Jquery Core Js -->
+<script src="~/assets/bundles/libscripts.bundle.js"></script> <!-- Bootstrap JS and jQuery v3.2.1 --> 
+<script src="~/assets/bundles/vendorscripts.bundle.js"></script> <!-- slimscroll, waves Scripts Plugin Js --> 
+
+<script src="~/assets/bundles/sparkline.bundle.js"></script> <!-- Sparkline Plugin Js --> 
+<script src="~/assets/bundles/flotscripts.bundle.js"></script><!-- Flot Charts Plugin Js --> 
+<script src="~/assets/bundles/morrisscripts.bundle.js"></script> <!-- Morris Plugin Js --> 
+<script src="~/assets/plugins/jquery-knob/jquery.knob.min.js"></script> <!-- Jquery Knob Plugin Js -->
+<script src="~/assets/bundles/countto.bundle.js"></script> <!-- Jquery CountTo Plugin Js -->
+
+<script src="~/assets/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script> <!-- JVectorMap Plugin Js --> 
+<script src="~/assets/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script> <!-- JVectorMap Plugin Js --> 
+
+<script src="~/assets/bundles/mainscripts.bundle.js"></script><!-- Custom Js --> 
+<script src="~/assets/js/pages/index.js"></script> 
+<script src="~/assets/js/pages/charts/sparkline.js"></script> 
+<script src="~/assets/js/pages/maps/jvectormap.js"></script> 
+<script src="~/assets/js/pages/charts/jquery-knob.js"></script>
+ @RenderSection("Scripts", required: false)
+</body>
+</html>
+
+
+
+
+  

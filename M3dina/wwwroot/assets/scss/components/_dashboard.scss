@@ -1,0 +1,60 @@
+﻿/* top report stats ======================================================== */
+.top-report{
+    h3{
+        margin-top:0;
+        font-size:30px;
+        font-weight:300;
+    }
+    .progress{
+        height:5px;
+        margin-bottom:0;
+    }
+}
+
+/* Product Report ======================================================== */
+.product-report{
+    .counter{
+        @extend .m-t-0;
+        font-weight:normal;
+    }
+    .icon{
+        float: left;
+        width: 50px;        
+        text-align: center;
+        line-height: 50px;
+        @include border-radius(3px);
+        @extend .m-r-15;
+        border:1px solid #ccc;
+    }
+}
+
+/* Browser used ======================================================== */
+.dashboard-donut-chart {
+    height: 265px;
+}
+
+/*  ======================================================== */
+.stats-report{
+    margin-bottom:0;
+    
+    .stat-item {
+        display: inline-block;
+        padding-right: 15px;
+        
+        h5{
+            font-weight:300;
+            font-size:12px;
+            margin:0;
+        }
+        
+    }
+    
+}
+
+
+@media only screen and (max-width: 767px) {
+    
+}
+@media only screen and (max-width:360px) {
+    
+}

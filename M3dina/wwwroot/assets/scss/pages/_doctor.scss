@@ -1,0 +1,14 @@
+﻿.doctor{
+    .detail{
+        @extend .m-t-10;
+        .social-links{
+            li{
+                display: inline-block;
+                a{
+                    color: #30373e;
+                    padding: 0 5px;
+                }
+            }
+        }
+    }
+}

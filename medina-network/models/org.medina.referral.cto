@@ -1,0 +1,138 @@
+/**
+ * Write your model definitions here
+ */
+
+namespace org.medina.referral
+
+//Declare an enum for Gender
+enum PersonGender {
+  o MALE
+  o FEMALE
+  o UNDECLARED
+}
+
+//Declare a Person class
+concept Person {
+  o String GivenName
+  o String FamilyName
+  o DateTime BirthDate
+  o PersonGender Gender
+}
+
+//Declare an Address class
+concept Address {
+  o String AddressLine1
+  o String AddressLine2
+  o String City
+  o String State
+  o String PostalCode
+  o String Country
+}
+
+//Declare Contact Class
+concept Contact{
+  o String CellPhone
+  o String OtherPhone
+  o String Email
+}
+/* We shall declare Items that will be on the Patient summary, this were taken from HL7 CDA sample */
+
+//Advanced directives that will be inherited by patient
+concept AdvanceDirectives {
+  o String Directive
+  o String Description
+  o String Verification
+  o String SupportingDocument
+}
+
+concept FunctionalStatus
+{
+  o String FunctionalCondition
+  o String EffectiveDates
+  o String ConditionStatus
+
+}
+
+ 	concept Problems
+   {
+ o String Condition	
+ o String EffectiveDates	
+ o String ConditionStatus
+
+   }
+
+ concept FamilyHistory
+ {
+   o String Diagnosis	
+   o String AgeAtOnset
+ }
+concept FatherHistory
+{
+  o String Status 
+  o FamilyHistory[] history 
+}
+
+concept MotherHistory
+{
+  o String Status 
+  o FamilyHistory[] history
+}
+
+concept SocialHistory
+{
+ o String SocialHistoryElement
+ o String Description	
+ o String EffectiveDates	
+}
+
+	
+//Patient Object that inherits from person   
+asset Patient identified by PatientID {
+  o String PatientID
+  o Person Patient
+  o Contact PatientContact
+  o Address PatientAddress
+  o AdvanceDirectives[] advancedDirectives
+  o FunctionalStatus[] FunctionalStatus
+  o Problems[] problems
+  o FatherHistory fatherHistory 
+  o MotherHistory motherHistory 
+  --> Facility currentFacility
+}
+
+asset Guardian identified by GuardianID {
+  o String GuardianID
+  o Person Guardian
+  o Contact GuardianContact
+  o Address GuardianAddress
+}
+
+asset NextofKin identified by NokID{
+  o String NokID
+  o Person NextofKin
+  o Contact NokContact
+  o Address NokAddress
+}
+
+participant Facility identified by facilityId {
+  o String facilityId
+  o String email
+  o String facilityName
+  
+}
+
+participant Payer identified by PayerID{
+  o String PayerID
+  o String PayerName
+  o String PolicyType
+  o String CoverageType
+  o String CoveredPartyID
+  o String CoverageAuthorizations
+
+}
+
+transaction MovePatient {
+  --> Patient patient
+  --> Facility receivingFacility
+}
+

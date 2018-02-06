@@ -1,0 +1,124 @@
+﻿.alert-primary {
+    color: #004085;
+    background-color: #cce5ff;
+    border-color: #b8daff;
+}
+.alert-secondary {
+    color: #464a4e;
+    background-color: #e7e8ea;
+    border-color: #dddfe2;
+}
+.alert-dark {
+    color: #1b1e21;
+    background-color: #d6d8d9;
+    border-color: #c6c8ca;
+}
+.alert-light {
+    color: #818182;
+    background-color: #fefefe;
+    border-color: #fdfdfe;
+}
+
+/* notification blink*/
+.notify{
+	position: absolute;
+   	top:9px;
+    right:9px;
+	.heartbit{
+		position: absolute;
+		top: -20px;
+		right: -16px;
+		height: 25px;
+		width: 25px;
+		z-index: 10;
+		border: 4px solid;
+		border-color:#3d4c5a;
+		border-radius: 70px;
+		animation: heartbit 1s ease-out;
+		-moz-animation: heartbit 1s ease-out;
+		-moz-animation-iteration-count: infinite;
+		-o-animation: heartbit 1s ease-out;
+		-o-animation-iteration-count: infinite;
+		-webkit-animation: heartbit 1s ease-out;
+		-ms-animation: heartbit 1s ease-out;
+		-webkit-animation-iteration-count: infinite;
+		animation-iteration-count: infinite;
+	}
+	.point {
+		width: 6px;
+		height: 6px;
+		-webkit-border-radius: 30px;
+		-moz-border-radius: 30px;
+		border-radius: 30px;
+		background-color:#3d4c5a;
+		position: absolute;
+		right: -6px;
+		top: -10px
+	}
+}
+@-moz-keyframes heartbit {
+0% {
+-moz-transform:scale(0);
+opacity:0
+}
+25% {
+-moz-transform:scale(.1);
+opacity:.1
+}
+50% {
+-moz-transform:scale(.5);
+opacity:.3
+}
+75% {
+-moz-transform:scale(.8);
+opacity:.5
+}
+100% {
+-moz-transform:scale(1);
+opacity:0
+}
+}
+@-webkit-keyframes heartbit {
+0% {
+-webkit-transform:scale(0);
+opacity:0
+}
+25% {
+-webkit-transform:scale(.1);
+opacity:.1
+}
+50% {
+-webkit-transform:scale(.5);
+opacity:.3
+}
+75% {
+-webkit-transform:scale(.8);
+opacity:.5
+}
+100% {
+-webkit-transform:scale(1);
+opacity:0
+}
+}
+@-ms-keyframes heartbit {
+0% {
+-ms-transform:scale(0);
+opacity:0
+}
+25% {
+-ms-transform:scale(.1);
+opacity:.1
+}
+50% {
+-ms-transform:scale(.5);
+opacity:.3
+}
+75% {
+-ms-transform:scale(.8);
+opacity:.5
+}
+100% {
+-ms-transform:scale(1);
+opacity:0
+}
+}

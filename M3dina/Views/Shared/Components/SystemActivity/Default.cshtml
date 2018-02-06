@@ -1,0 +1,33 @@
+﻿@model IEnumerable<M3dina.Models.Transaction>  
+
+
+
+
+<div class="card activities">
+                    <div class="header">
+                        <h2>System Activities</h2>
+                        <small>Ledger</small>
+                        <ul class="header-dropdown m-r--5">
+                            <li class="dropdown"> <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <i class="zmdi zmdi-more-vert"></i> </a>
+                                <ul class="dropdown-menu pull-right">
+                                    <li><a href="javascript:void(0);" class=" waves-effect waves-block">Action</a></li>
+                                    <li><a href="javascript:void(0);" class=" waves-effect waves-block">Another action</a></li>
+                                    <li><a href="javascript:void(0);" class=" waves-effect waves-block">Something else here</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="body">
+                        <div class="streamline b-l b-accent">
+        @foreach (var item in Model) { 
+                 <div class="sl-item">
+                    <div class="sl-content">
+                        <div class="text-muted-dk">@Html.DisplayFor(modelItem => item.transactionTimestamp)</div>
+                            <p>@Html.DisplayFor(modelItem => item.transactionDescription)</p>
+                        </div>
+                </div>
+            }
+                                                   
+                        </div>
+                    </div>
+                </div>

@@ -1,0 +1,57 @@
+﻿
+@model IEnumerable<M3dina.Models.Patient>  
+
+@{
+    ViewBag.Title = "Patients";
+    ViewBag.Current = "Patient";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+    <section class="content patients">
+    <div class="container-fluid">
+        <div class="block-header">
+            <h2>All Patients</h2>
+            <small class="text-muted">Welcome to m3dina application</small>
+        </div>        
+        <div class="row clearfix">
+            <div class="col-md-12 col-xs-12">
+                <div class="card patients-list">
+                    <div class="body">
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>  
+                                         <th>Photo</th>
+                                        <th>@Html.DisplayNameFor(model => model.firstName)</th>
+                                        <th>@Html.DisplayNameFor(model => model.LastName) </th>
+                                        <th> @Html.DisplayNameFor(model => model.gender) </th>
+                                        <th>@Html.DisplayNameFor(model => model.currentFacility)  </th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                @foreach (var item in Model) {
+                                    <tr>
+                                        <td><span class="list-icon"><img class="patients-img" src="assets/images/xs/avatar1.jpg" alt=""></span></td>
+                                        <td> @Html.DisplayFor(modelItem => item.firstName) </td>
+                                        <td>@Html.DisplayFor(modelItem => item.LastName) </td>
+                                        <td>@Html.DisplayFor(modelItem => item.gender)  </td>
+                                        <td> @Html.DisplayFor(modelItem => item.currentFacility) </td>
+
+                                        <td><span class="label label-success">Approved</span></td>
+                                    </tr>
+                                    }
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
