@@ -18,17 +18,14 @@ namespace M3dina.Controllers
     {
         HttpClient client;
         //The URL of the WEB API Service
-        string url = "http://localhost:3000/api/Patient"; 
+
 
         //The HttpClient Class, this will be used for performing 
         //HTTP Operations, GET, POST, PUT, DELETE
         //Set the base address and the Header Formatter
         public PatientController()
         {
-            client = new HttpClient();
-            client.BaseAddress = new Uri(url);
-            client.DefaultRequestHeaders.Accept.Clear();
-            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            
         }
 
 
@@ -36,16 +33,45 @@ namespace M3dina.Controllers
         [BreadCrumb(Title = "View Patients", Order = 1)]
         public async Task<ActionResult> Index()
         {
+           
+            string url = "http://localhost:3000/api/Patient";
+            client = new HttpClient();
+            client.BaseAddress = new Uri(url);
+            client.DefaultRequestHeaders.Accept.Clear();
+            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             HttpResponseMessage responseMessage = await client.GetAsync(url);
              if (responseMessage.IsSuccessStatusCode)
              {
                  var responseData = responseMessage.Content.ReadAsStringAsync().Result;
 
-                 var Patients = JsonConvert.DeserializeObject<List<Patient>>(responseData);
+                 var Patients = JsonConvert.DeserializeObject<List<PatientDetails>>(responseData);
 
                  return View(Patients);
              }
              return View("Error");
+
+        }
+
+
+
+        public async Task<ActionResult> PatientProfile(string ID)
+        {
+            string url = "http://localhost:3000/api/Patient/"+ ID;
+            client = new HttpClient();
+            client.BaseAddress = new Uri(url);
+            client.DefaultRequestHeaders.Accept.Clear();
+            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            HttpResponseMessage responseMessage = await client.GetAsync(url);
+            if (responseMessage.IsSuccessStatusCode)
+            {
+                var responseData = responseMessage.Content.ReadAsStringAsync().Result;
+
+                var Patient = JsonConvert.DeserializeObject<PatientDetails>(responseData);
+                ViewData["Patient"] = Patient;
+
+                return View(Patient);
+            }
+            return View("Error");
 
         }
 
@@ -57,7 +83,7 @@ namespace M3dina.Controllers
         }
 
         //The Post method
-        [HttpPost]
+    /*    [HttpPost]
         public async Task<ActionResult> Create(Patient patient)
         {
 
@@ -125,6 +151,7 @@ namespace M3dina.Controllers
             }
             return RedirectToAction("Error");
         }
+        */
 
     }
 }

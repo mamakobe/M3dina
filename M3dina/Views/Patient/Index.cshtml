@@ -1,5 +1,5 @@
 ﻿
-@model IEnumerable<M3dina.Models.Patient>  
+@model IEnumerable<M3dina.Models.PatientDetails>  
 
 @{
     ViewBag.Title = "Patients";
@@ -24,9 +24,9 @@
                                 <thead>
                                     <tr>  
                                          <th>Photo</th>
-                                        <th>@Html.DisplayNameFor(model => model.firstName)</th>
-                                        <th>@Html.DisplayNameFor(model => model.LastName) </th>
-                                        <th> @Html.DisplayNameFor(model => model.gender) </th>
+                                        <th>@Html.DisplayNameFor(model => model.Patient.GivenName)</th>
+                                        <th>@Html.DisplayNameFor(model => model.Patient.FamilyName) </th>
+                                        <th> @Html.DisplayNameFor(model => model.Patient.Gender) </th>
                                         <th>@Html.DisplayNameFor(model => model.currentFacility)  </th>
 
                                     </tr>
@@ -35,9 +35,9 @@
                                 @foreach (var item in Model) {
                                     <tr>
                                         <td><span class="list-icon"><img class="patients-img" src="assets/images/xs/avatar1.jpg" alt=""></span></td>
-                                        <td> @Html.DisplayFor(modelItem => item.firstName) </td>
-                                        <td>@Html.DisplayFor(modelItem => item.LastName) </td>
-                                        <td>@Html.DisplayFor(modelItem => item.gender)  </td>
+                                        <td> @Html.DisplayFor(modelItem => item.Patient.GivenName) </td>
+                                        <td>@Html.DisplayFor(modelItem => item.Patient.FamilyName) </td>
+                                        <td>@Html.DisplayFor(modelItem => item.Patient.Gender)  </td>
                                         <td> @Html.DisplayFor(modelItem => item.currentFacility) </td>
 
                                         <td><span class="label label-success">Approved</span></td>
@@ -52,6 +52,111 @@
             </div>
         </div>
     </div>
+
+    <div class="col-lg-12 col-md-12 col-sm-12">
+                <div class="card">
+                    <div class="header">
+                        <h2>PATIENTS Status</h2>
+                        <ul class="header-dropdown m-r--5">
+                            <li class="dropdown"> <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="zmdi zmdi-more-vert"></i></a>
+                                <ul class="dropdown-menu pull-right">
+                                    <li><a href="javascript:void(0);">Action</a></li>
+                                    <li><a href="javascript:void(0);">Another action</a></li>
+                                    <li><a href="javascript:void(0);">Something else here</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="body">
+                        <p><span class="label label-success">3 Admit</span>
+                            <span class="label label-default">2 Discharge</span>
+                        </p>
+                        <div class="table-responsive">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>PATIENTS</th>
+                                        <th>ADDRESS</th>
+                                        <th>START DATE</th>
+                                        <th>END DATE</th>
+                                        <th>PRIORITY</th>
+                                        <th>PROGRESS</th>
+                                        <th>STATUS</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td><img src="assets/images/xs/avatar3.jpg" class="rounded-circle width30 m-r-15" alt="profile-image"><span>John</span></td>
+                                        <td><span class="text-info">70 Bowman St. South Windsor, CT 06074</span></td>
+                                        <td>Sept 13, 2017</td>
+                                        <td>Sept 16, 2017</td>
+                                        <td><span class="label label-warning">MEDIUM</span></td>
+                                        <td><div class="progress m-b-0 m-t-10">
+                                                <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%;"> <span class="sr-only">40% Complete</span> </div>
+                                            </div>
+                                        </td>
+                                        <td><span class="label label-success">Admit</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td><img src="assets/images/xs/avatar1.jpg" class="rounded-circle width30 m-r-15" alt="profile-image"><span>Jack Bird</span></td>
+                                        <td><span class="text-info">123 6th St. Melbourne, FL 32904</span></td>
+                                        <td>Sept 13, 2017</td>
+                                        <td>Sept 22, 2017</td>
+                                        <td><span class="label label-warning">MEDIUM</span></td>
+                                        <td><div class="progress m-b-0 m-t-10">
+                                                <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;"> <span class="sr-only">100% Complete</span> </div>
+                                            </div>
+                                        </td>
+                                        <td><span class="label label-default">Discharge</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td><img src="assets/images/xs/avatar4.jpg" class="rounded-circle width30 m-r-15" alt="profile-image"><span>Dean Otto</span></td>
+                                        <td><span class="text-info">123 6th St. Melbourne, FL 32904</span></td>
+                                        <td>Sept 13, 2017</td>
+                                        <td>Sept 23, 2017</td>
+                                        <td><span class="label label-warning">MEDIUM</span></td>
+                                        <td><div class="progress m-b-0 m-t-10">
+                                                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" style="width: 15%;"> <span class="sr-only">15% Complete</span> </div>
+                                            </div>
+                                        </td>
+                                        <td><span class="label label-success">Admit</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td><img src="assets/images/xs/avatar2.jpg" class="rounded-circle width30 m-r-15" alt="profile-image"><span>Jack Bird</span></td>
+                                        <td><span class="text-info">4 Shirley Ave. West Chicago, IL 60185</span></td>
+                                        <td>Sept 17, 2017</td>
+                                        <td>Sept 16, 2017</td>
+                                        <td><span class="label label-success">LOW</span></td>
+                                        <td><div class="progress m-b-0 m-t-10">
+                                                <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;"> <span class="sr-only">100% Complete</span> </div>
+                                            </div>
+                                        </td>
+                                        <td><span class="label label-default">Discharge</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>5</td>
+                                        <td><img src="assets/images/xs/avatar5.jpg" class="rounded-circle width30 m-r-15" alt="profile-image"><span>Hughe L.</span></td>
+                                        <td><span class="text-info">4 Shirley Ave. West Chicago, IL 60185</span></td>
+                                        <td>Sept 18, 2017</td>
+                                        <td>Sept 18, 2017</td>
+                                        <td><span class="label label-danger">HIGH</span></td>
+                                        <td><div class="progress m-b-0 m-t-10">
+                                                <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 85%;"> <span class="sr-only">85% Complete</span> </div>
+                                            </div>
+                                        </td>
+                                        <td><span class="label label-success">Admit</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>                            
+                    </div>
+                </div>
+            </div>
 </section>
 
 

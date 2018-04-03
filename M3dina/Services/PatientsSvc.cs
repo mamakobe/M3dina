@@ -25,17 +25,18 @@ namespace M3dina.Services
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
         }
 
-        public async Task<List<Patient>> PatientListAsync()
+        public async Task<List<PatientDetails>> PatientListAsync()
         {
             HttpResponseMessage responseMessage = await client.GetAsync(url);
             if (responseMessage.IsSuccessStatusCode)
             {
                 var responseData = responseMessage.Content.ReadAsStringAsync().Result;
-                List<Patient> patients = JsonConvert.DeserializeObject<List<Patient>>(responseData);
+                List<PatientDetails> patients = JsonConvert.DeserializeObject<List<PatientDetails>>(responseData);
                 HelperClasses.TotalNumberofPatients = patients.Count();
                 return patients;
             }
             return null;
+          
         }
 
     }
