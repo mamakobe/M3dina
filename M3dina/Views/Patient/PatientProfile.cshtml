@@ -24,16 +24,16 @@
                     </div>
                     <div class="body">
                         <strong>Name</strong>
-                        <p>@Html.DisplayNameFor(model =>  model.Patient.GivenName) @Html.DisplayNameFor(model =>  model.Patient.FamilyName)</p>
+                        <p>  @patientdetails.Patient.GivenName   @patientdetails.Patient.FamilyName</p>
                         <strong>Gender</strong>
-                        <p>@Html.DisplayNameFor(model =>  model.Patient.Gender)</p>
+                        <p>  @patientdetails.Patient.Gender</p>
                         <strong>Email ID</strong>
-                        <p>@Html.DisplayNameFor(model =>  model.PatientContact.Email)</p>
+                        <p>  @patientdetails.PatientContact.Email</p>
                         <strong>Phone</strong>
-                        <p>@Html.DisplayNameFor(model =>  model.PatientContact.CellPhone)</p>
+                        <p>  @patientdetails.PatientContact.CellPhone</p>
                         <hr>
                         <strong>Address</strong>
-                        <address>@Html.DisplayNameFor(model =>  model.PatientAddress.AddressLine1) @Html.DisplayNameFor(model =>  model.PatientAddress.AddressLine2) @Html.DisplayNameFor(model =>  model.PatientAddress.City), @Html.DisplayNameFor(model =>  model.PatientAddress.State) @Html.DisplayNameFor(model =>  model.PatientAddress.PostalCode)</address>
+                        <address>  @patientdetails.PatientAddress.AddressLine1   @patientdetails.PatientAddress.AddressLine2   @patientdetails.PatientAddress.City,   @patientdetails.PatientAddress.State   @patientdetails.PatientAddress.PostalCode</address>
                     </div>
                 </div>
             </div>
@@ -104,22 +104,13 @@
                             </div>
 
                           <div role="tabpanel" class="tab-pane in active" id="home"> <b>Description</b>
-                                <p> Lorem ipsum dolor sit amet, ut duo atqui exerci dicunt, ius impedit mediocritatem an. Pri ut tation electram moderatius.
-                                    Per te suavitate democritum. Duis nemore probatus ne quo, ad liber essent aliquid
-                                    pro. Et eos nusquam accumsan, vide mentitum fabellas ne est, eu munere gubergren
-                                    sadipscing mel. </p>
+                                <p> @item.Description </p>
                             </div>
                                  <div role="tabpanel" class="tab-pane in active" id="home"> <b>Verification</b>
-                                <p> Lorem ipsum dolor sit amet, ut duo atqui exerci dicunt, ius impedit mediocritatem an. Pri ut tation electram moderatius.
-                                    Per te suavitate democritum. Duis nemore probatus ne quo, ad liber essent aliquid
-                                    pro. Et eos nusquam accumsan, vide mentitum fabellas ne est, eu munere gubergren
-                                    sadipscing mel. </p>
+                                <p> @item.Verification </p>
                             </div>  
                                <div role="tabpanel" class="tab-pane in active" id="home"> <b>Supporting Document</b>
-                                <p> Lorem ipsum dolor sit amet, ut duo atqui exerci dicunt, ius impedit mediocritatem an. Pri ut tation electram moderatius.
-                                    Per te suavitate democritum. Duis nemore probatus ne quo, ad liber essent aliquid
-                                    pro. Et eos nusquam accumsan, vide mentitum fabellas ne est, eu munere gubergren
-                                    sadipscing mel. </p>
+                                <p> @item.SupportingDocument </p>
                             </div>
                                                 }
                             <div role="tabpanel" class="tab-pane" id="profile"> <b>Profile Content</b>
@@ -144,16 +135,7 @@
                     </div>
                                         
                                      
-                                        <hr>
-                                        <h4>Past Visit History</h4>
-                                        <ul class="dis">
-                                            <li>Integer tincidunt.</li>
-                                            <li>Praesent vestibulum dapibus nibh.</li>
-                                            <li>Integer tincidunt.</li>
-                                            <li>Praesent vestibulum dapibus nibh.</li>
-                                            <li>Integer tincidunt.</li>
-                                            <li>Praesent vestibulum dapibus nibh.</li>
-                                        </ul>
+                    
                                     </div>
                                 </div>
                             </div>
