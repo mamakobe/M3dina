@@ -1,22 +1,23 @@
-﻿@model M3dina.Models.PatientDetails 
-@{
-    ViewBag.Title = "Patient Profile";
-    ViewBag.Current = "Patient";
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
-@{
-    var patientdetails = (PatientDetails)ViewData["Patient"];
+﻿@model M3dina.Models.PatientDetails
+@{ 
+ViewBag.Title = "Patient Profile"; 
+ViewBag.Current = "Patient";
+Layout = "~/Views/Shared/_Layout.cshtml";
+
+} 
+@{ 
+var patientdetails = (PatientDetails)ViewData["Patient"];
 }
 <section class="content profile-page">
     <div class="container-fluid">
         <div class="block-header">
             <h2>Patient Profile</h2>
             <small class="text-muted">Welcome to adminX application</small>
-        </div>        
+        </div>
         <div class="row clearfix">
             <div class="col-lg-4 col-md-12 col-sm-12">
                 <div class=" card patient-profile">
-                    <img src="assets/images/image-1.jpg" class="img-fluid" alt="">                              
+                    <img src="assets/images/image-1.jpg" class="img-fluid" alt="">
                 </div>
                 <div class="card xl-khaki">
                     <div class="header xl-khaki">
@@ -24,13 +25,15 @@
                     </div>
                     <div class="body">
                         <strong>Name</strong>
-                        <p>  @patientdetails.Patient.GivenName   @patientdetails.Patient.FamilyName</p>
+                        <p> @patientdetails.Patient.GivenName @patientdetails.Patient.FamilyName</p>
                         <strong>Gender</strong>
-                        <p>  @patientdetails.Patient.Gender</p>
+                        <p> @patientdetails.Patient.Gender</p>
+                        <strong>BirthDate</strong>
+                        <p> @patientdetails.Patient.BirthDate</p>
                         <strong>Email ID</strong>
-                        <p>  @patientdetails.PatientContact.Email</p>
+                        <p> @patientdetails.PatientContact.Email</p>
                         <strong>Phone</strong>
-                        <p>  @patientdetails.PatientContact.CellPhone</p>
+                        <p> @patientdetails.PatientContact.CellPhone</p>
                         <hr>
                         <strong>Address</strong>
                         <address>  @patientdetails.PatientAddress.AddressLine1   @patientdetails.PatientAddress.AddressLine2   @patientdetails.PatientAddress.City,   @patientdetails.PatientAddress.State   @patientdetails.PatientAddress.PostalCode</address>
@@ -39,7 +42,7 @@
             </div>
             <div class="col-lg-8 col-md-12 col-sm-12">
                 <div class="card">
-                    <div class="body"> 
+                    <div class="body">
                         <!-- Nav tabs -->
                         <ul class="nav nav-tabs" role="tablist">
                             <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#report">Biography</a></li>
@@ -57,7 +60,7 @@
                                         </div>
                                         <hr>
                                         <div class="post-box">
-                                            <h4>General Report</h4>                                        
+                                            <h4>General Report</h4>
                                             <div class="body">
                                                 <ul class="list-unstyled">
                                                     <li>
@@ -87,55 +90,161 @@
                                                 </ul>
                                             </div>
                                         </div>
-                                        <div class="body"> 
-                        <!-- Nav tabs -->
-                        <ul class="nav nav-tabs">
-                            <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#home">Advanced Directives</a></li>
-                            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#profile">Functional Status</a></li>
-                            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#messages">Problems</a></li>
-                            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#settings">Family History</a></li>
-                        </ul>                        
-                        <!-- Tab panes -->
-                        <div class="tab-content">
-                        @foreach (var item in patientdetails.advancedDirectives)
-{
-                             <div role="tabpanel" class="tab-pane in active" id="home"> <b>Directive</b>
-                                <p>   @item.Directive </p>
-                            </div>
 
-                          <div role="tabpanel" class="tab-pane in active" id="home"> <b>Description</b>
-                                <p> @item.Description </p>
-                            </div>
-                                 <div role="tabpanel" class="tab-pane in active" id="home"> <b>Verification</b>
-                                <p> @item.Verification </p>
-                            </div>  
-                               <div role="tabpanel" class="tab-pane in active" id="home"> <b>Supporting Document</b>
-                                <p> @item.SupportingDocument </p>
-                            </div>
-                                                }
-                            <div role="tabpanel" class="tab-pane" id="profile"> <b>Profile Content</b>
-                                <p> Lorem ipsum dolor sit amet, ut duo atqui exerci dicunt, ius impedit mediocritatem an. Pri ut tation electram moderatius.
-                                    Per te suavitate democritum. Duis nemore probatus ne quo, ad liber essent aliquid
-                                    pro. Et eos nusquam accumsan, vide mentitum fabellas ne est, eu munere gubergren
-                                    sadipscing mel. </p>
-                            </div>
-                            <div role="tabpanel" class="tab-pane" id="messages"> <b>Message Content</b>
-                                <p> Lorem ipsum dolor sit amet, ut duo atqui exerci dicunt, ius impedit mediocritatem an. Pri ut tation electram moderatius.
-                                    Per te suavitate democritum. Duis nemore probatus ne quo, ad liber essent aliquid
-                                    pro. Et eos nusquam accumsan, vide mentitum fabellas ne est, eu munere gubergren
-                                    sadipscing mel. </p>
-                            </div>
-                            <div role="tabpanel" class="tab-pane" id="settings"> <b>Settings Content</b>
-                                <p> Lorem ipsum dolor sit amet, ut duo atqui exerci dicunt, ius impedit mediocritatem an. Pri ut tation electram moderatius.
-                                    Per te suavitate democritum. Duis nemore probatus ne quo, ad liber essent aliquid
-                                    pro. Et eos nusquam accumsan, vide mentitum fabellas ne est, eu munere gubergren
-                                    sadipscing mel. </p>
-                            </div>
-                        </div>
-                    </div>
-                                        
-                                     
-                    
+                                        <div class="body">
+                                            <!-- Nav tabs -->
+                                            <ul class="nav nav-tabs">
+                                                <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#advanceddirective">Advanced Directives</a></li>
+                                                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#functionalstatus">Functional Status</a></li>
+                                                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#problems">Problems</a></li>
+                                                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#history">Family History</a></li>
+                                            </ul>
+                                            <!-- Tab panes -->
+                                            <div class="tab-content">
+
+                                                <div role="tabpanel" class="table-responsive tab-pane in active" id="advanceddirective">
+                                                    <table class="table table-striped">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Directive</th>
+                                                                <th>Description</th>
+                                                                <th>Verification</th>
+                                                                <th>Supporting Document</th>
+
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+
+                                                            @foreach (var item in patientdetails.advancedDirectives) {
+
+                                                            <tr>
+
+                                                                <td>@item.Directive</td>
+                                                                <td><span class="text-info">@item.Description</span></td>
+
+                                                                <td>@item.Verification</td>
+                                                                <td><span class="label label-warning">@item.SupportingDocument</span></td>
+
+                                                            </tr>
+                                                            }
+
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <div role="tabpanel" class="tab-pane" id="functionalstatus">
+                                                   
+                                                   <table class="table table-striped">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Functional Condition</th>
+                                                                <th>Effective Dates</th>
+                                                                <th>Condition Status</th>
+                                                                
+
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+
+                                                            @foreach (var item in patientdetails.FunctionalStatus) {
+
+                                                            <tr>
+
+                                                                <td>@item.FunctionalCondition</td>
+                                                                <td><span class="text-info">@item.EffectiveDates</span></td>
+
+                                                                
+                                                                <td><span class="label label-warning">@item.ConditionStatus</span></td>
+
+                                                            </tr>
+                                                            }
+
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <div role="tabpanel" class="tab-pane" id="problems">
+                                                  
+                                                  <table class="table table-striped">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Condition</th>
+                                                                <th>Effective Dates</th>
+                                                                <th>Condition Status</th>
+                                                                
+
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+
+                                                            @foreach (var item in patientdetails.problems) {
+
+                                                            <tr>
+
+                                                                <td>@item.Condition</td>
+                                                                <td><span class="text-info">@item.EffectiveDates</span></td>
+
+                                                                <td><span class="label label-warning">@item.ConditionStatus</span></td>
+
+                                                            </tr>
+                                                            }
+
+                                                        </tbody>
+                                                    </table>
+                                                  
+
+                                                    </div>
+                                                <div role="tabpanel" class="tab-pane" id="history">
+                                                    <b>Father: @patientdetails.fatherHistory.Status </b>
+                                                    <table class="table table-striped">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Diagnosis</th>
+                                                                <th>Age At Onset</th>
+                                                            
+                                                                
+
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+
+                                                            @foreach (var item in patientdetails.fatherHistory.history) {
+
+                                                            <tr>
+
+                                                                <td>@item.Diagnosis</td>
+                                                               <td>@item.AgeAtOnset</td>
+                                                                 </tr>
+                                                            }
+
+                                                        </tbody>
+                                                    </table>
+                                                    <b>Mother: @patientdetails.motherHistory.Status </b>
+                                                    <table class="table table-striped">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Diagnosis</th>
+                                                                <th>Age At Onset</th>
+                                                             
+                                                                
+
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+
+                                                            @foreach (var item in patientdetails.motherHistory.history) {
+
+                                                            <tr>
+
+                                                                <td>@item.Diagnosis</td>
+                                                               <td>@item.AgeAtOnset</td>
+                                                                 </tr>
+                                                            }
+
+                                                        </tbody>
+                                                    </table>
+                                                   
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -196,12 +305,12 @@
                             <div role="tabpanel" class="tab-pane" id="report-chart">
                                 <h4>ECG Report</h4>
                                 <div class="stats-row">
-                                        <div class="stat-item col-blue">
-                                            <h6>Pulse <b>76</b></h6></div>
-                                        <div class="stat-item col-blush">
-                                            <h6>BP <b>112</b></h6></div>
-                                    </div>
-                               <div id="real_time_chart" class="flot-chart"></div>
+                                    <div class="stat-item col-blue">
+                                        <h6>Pulse <b>76</b></h6></div>
+                                    <div class="stat-item col-blush">
+                                        <h6>BP <b>112</b></h6></div>
+                                </div>
+                                <div id="real_time_chart" class="flot-chart"></div>
                             </div>
                         </div>
                     </div>
